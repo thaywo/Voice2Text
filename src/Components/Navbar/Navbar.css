@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap");
+@import url("https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css");
+
+.navbar-container {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  background-color: #ff9b0e;
+  color: white;
+  text-align: center;
+  padding: 0.75rem;
+}
+
+.tagline {
+  font-size: 0.8rem;
+  margin-top: 0.25vh;
+}
+
+.nav-btns {
+  display: none;
+}
+
+@media only screen and (min-width: 1000px) {
+  .navbar-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.75rem 2.5rem;
+    text-align: left;
+    font-size: 2rem;
+  }
+  .nav-btns {
+    display: flex;
+  }
+
+  .nbtn {
+    background-color: white;
+    font-size: 1rem;
+    border: none;
+    padding: 0.4rem 1.2rem;
+    margin: 0 0.5rem;
+    border-radius: 5px;
+    color: #ff9b0e;
+    border: 2px solid #ff9b0e;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 500;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nbtn:hover {
+    transition-duration: 0.1s;
+    color: #3a3a3a;
+    border: 2px solid #3a3a3a;
+  }
+
+  .nbtn i {
+    margin-left: 0.5rem;
+    font-size: 1.55rem;
+    padding-top: 0.5vh;
+    color: #ff9b0e;
+  }
+
+  .nbtn i:hover {
+    color: #3a3a3a;
+  }
+}

@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+.details-container {
+  background-color: white;
+  margin-top: 2vh;
+}
+
+.details {
+  width: 80vw;
+  font-family: "Poppins", sans-serif;
+  box-shadow: 0px 0.7px 11.5px rgba(0, 0, 0, 0.028),
+    0px 2.2px 38.6px rgba(0, 0, 0, 0.042), 0px 10px 173px rgba(0, 0, 0, 0.07);
+  border: 2px solid #ff9b0e;
+  border-radius: 5px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.heading {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 1vh;
+  text-align: center;
+  color: #404040;
+}
+
+@media only screen and (min-width: 1000px) {
+  .details-container {
+    margin-top: 0;
+  }
+
+  .details {
+    width: 25vw;
+    height: 50vh;
+  }
+}
+
+.counters-container {
+  display: flex;
+  justify-content: center;
+}
+
+.count {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.5rem;
+}
+
+.counter {
+  font-size: 1.25rem;
+  color: #404040;
+  font-weight: 600;
+}
+
+.label {
+  margin-top: 1vh;
+  margin-left: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #3a3a3a;
+  text-align: center;
+  font-family: "Montserrat Alternates";
+}
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 2px solid #ff9b0e;
+  box-shadow: 0px 0.7px 11.5px rgba(0, 0, 0, 0.028),
+    0px 2.2px 38.6px rgba(0, 0, 0, 0.042), 0px 10px 173px rgba(0, 0, 0, 0.07);
+}
+
+.microphone-container {
+  margin-top: 2vh;
+}
+
+.indicators {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.on,
+.off,
+.listening {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.indicator {
+  width: 1rem;
+  height: 1rem;
+  transition-duration: 0.1s;
+  background-color: #3a3a3a;
+  border-radius: 50%;
+  margin-bottom: 1vh;
+}
+
+.working {
+  transition-duration: 0.1s;
+  background-color: #4ceb94;
+}
+
+.nospeech {
+  text-align: center;
+  color: rgb(235, 82, 82);
+}
+
+.nospeech span {
+  font-weight: 500;
+}

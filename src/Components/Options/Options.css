@@ -1,0 +1,71 @@
+@import url("https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css");
+@import url("https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css");
+
+a {
+  text-decoration: none;
+}
+
+.options-container {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.options {
+  box-shadow: 0px 0.7px 11.5px rgba(0, 0, 0, 0.028),
+    0px 2.2px 38.6px rgba(0, 0, 0, 0.042), 0px 10px 173px rgba(0, 0, 0, 0.07);
+  background-color: white;
+  bottom: 0;
+  border: 2px solid #ff9b0e;
+  border-radius: 10px;
+  padding-top: 0.5rem;
+}
+
+.option {
+  margin: 1rem;
+  font-size: 1.95rem;
+  color: #ff9b0e;
+}
+
+.option:hover {
+  color: #3a3a3a;
+}
+
+.mheading {
+  font-size: 1.5rem;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: bold;
+}
+
+.mtagline {
+  font-family: "Poppins", sans-serif;
+  margin-top: 1vh;
+}
+
+.mbtns {
+  margin-top: 2vh;
+}
+
+.mno,
+.myes {
+  margin-right: 0.5rem;
+  font-size: 1.05rem;
+  padding: 0.25rem 0.75rem;
+}
+
+.mno {
+  background-color: #ff9b0e;
+  color: white;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  border-radius: 5px;
+}
+
+.myes {
+  border: 2px solid #ff9b0e;
+  color: #ff9b0e;
+  background-color: white;
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+}
