@@ -11,7 +11,7 @@ import SpeechRecognition, {
 
 import { createSpeechlySpeechRecognition } from "@speechly/speech-recognition-polyfill";
 
-const appId = 'a1e6781b-494b-4a88-adfc-599724a002f0';
+const appId = 'Your API  here';
 const SpeechlySpeechRecognition = createSpeechlySpeechRecognition(appId);
 SpeechRecognition.applyPolyfill(SpeechlySpeechRecognition);
 
