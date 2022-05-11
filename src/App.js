@@ -85,7 +85,7 @@ function App() {
 
         <a href="https://www.linkedin.com/in/taiwo-hassan-531919175/" target="_blank">
           <button className="secbtn">
-            Connect with LinkedIn <i class="fi fi-brands-twitter"></i>
+            Connect on LinkedIn <i class="fi fi-brands-linkedin"></i>
           </button>
         </a>
 
