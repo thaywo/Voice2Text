@@ -40,7 +40,7 @@ const Options = ({ setText, listening, text }) => {
               }
             }}
           ></i>
-          <a target="_blank" href="https://github.com/AswinAsok/editr">
+          <a target="_blank" href="https://github.com/thaywo/Voice2Text">
             <i title="Give a Star" className="fi fi-rr-star option"></i>
           </a>
         </div>

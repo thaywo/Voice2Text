@@ -56,7 +56,7 @@ function App() {
   }, [listening]);
 
   useEffect(async () => {
-    fetch(`https://api.github.com/repos/thaywo/portfolio`)
+    fetch(`https://api.github.com/repos/thaywo/Voice2Text`)
       .then((res) => res.json())
       .then((data) => {
         setStars(data.stargazers_count);
@@ -77,15 +77,15 @@ function App() {
         />
       </div>
       <div className="buttons">
-        <a href="https://github.com/AswinAsok/editr" target="_blank">
+        <a href="https://github.com/thaywo/Voice2Text" target="_blank">
           <button className="pribtn">
             {stars} Stars <i class="fi fi-brands-github"></i>
           </button>
         </a>
 
-        <a href="https://twitter.com/_aswin_asok_" target="_blank">
+        <a href="https://www.linkedin.com/in/taiwo-hassan-531919175/" target="_blank">
           <button className="secbtn">
-            Follow me on <i class="fi fi-brands-twitter"></i>
+            Connect on LinkedIn <i class="fi fi-brands-twitter"></i>
           </button>
         </a>
 

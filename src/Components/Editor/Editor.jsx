@@ -8,7 +8,7 @@ const Editor = ({ text, setText, stars }) => {
         <textarea
           type="text"
           className="textarea"
-          placeholder="Just Starting Typing !"
+          placeholder="You can type, or use your voice !"
           onChange={(e) => {
             setText(e.target.value);
           }}
