@@ -24,18 +24,29 @@ function App() {
   let format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
   let localcount = 0;
 
-  const { transcript, listening, browserSupportsSpeechRecognition } =
+  const { transcript, listening, resetTranscript, browserSupportsSpeechRecognition } =
     useSpeechRecognition();
   const startListening = () =>
-    SpeechRecognition.startListening({ continuous: true });
+    SpeechRecognition.startListening({ continuous: true, language: 'en-US' });
 
   useEffect(() => {
-    if (text) {
-      setCharacters(text.length);
-      setWords(text.split(" ").length);
+    let displayText = text;
+    if (listening && transcript) {
+      const liveTranscript = transcript.toLowerCase();
+      if (text.length > 0) {
+        displayText = text.endsWith(' ') ? text + liveTranscript : text + " " + liveTranscript;
+      } else {
+        displayText = liveTranscript;
+      }
+    }
 
-      for (let index = 0; index < text.length; index++) {
-        if (format.test(text.charAt(index))) {
+    if (displayText) {
+      setCharacters(displayText.length);
+      setWords(displayText.split(" ").length);
+
+      localcount = 0;
+      for (let index = 0; index < displayText.length; index++) {
+        if (format.test(displayText.charAt(index))) {
           localcount += 1;
         }
       }
@@ -45,17 +56,24 @@ function App() {
       setWords(0);
       setSpecial(0);
     }
-  }, [text]);
+  }, [text, transcript, listening]);
 
   useEffect(() => {
-    if (transcript.length > 0 && text.length > 0) {
-      setText(text + " " + transcript.toLowerCase());
-    } else if (transcript.length > 0) {
-      setText(transcript.toLowerCase());
+    if (!listening && transcript.length > 0) {
+      setText(prevText => {
+        const newTranscript = transcript.toLowerCase();
+        if (prevText.length > 0) {
+          return prevText.endsWith(' ') ? prevText + newTranscript : prevText + " " + newTranscript;
+        } else {
+          return newTranscript;
+        }
+      });
+      resetTranscript();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [listening]);
 
-  useEffect(async () => {
+  useEffect(() => {
     fetch(`https://api.github.com/repos/thaywo/Voice2Text`)
       .then((res) => res.json())
       .then((data) => {
@@ -67,7 +85,7 @@ function App() {
     <div className="App">
       <Navbar />
       <div className="main-container">
-        <Editor text={text} setText={setText} stars={stars} />
+        <Editor text={text} setText={setText} stars={stars} transcript={transcript} listening={listening} />
         <Details
           words={words}
           characters={characters}
@@ -92,7 +110,7 @@ function App() {
       
       </div>
 
-      <Options setText={setText} listening={listening} text={text} />
+      <Options setText={setText} listening={listening} text={text} startListening={startListening} resetTranscript={resetTranscript} />
     </div>
   );
 }
