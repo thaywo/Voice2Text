@@ -6,7 +6,7 @@ import "react-confirm-alert/src/react-confirm-alert.css";
 
 import SpeechRecognition from "react-speech-recognition";
 
-const Options = ({ setText, listening, text }) => {
+const Options = ({ setText, listening, text, startListening, resetTranscript }) => {
   const [showDialog, setShowDialog] = useState(false);
   return (
     <>
@@ -16,14 +16,15 @@ const Options = ({ setText, listening, text }) => {
             if (!listening) {
               return (
                 <i
-                  title="Microphone"
+                  title="Start Recording"
                   className="fi fi-rr-microphone option"
-                  onClick={SpeechRecognition.startListening}
+                  onClick={startListening}
                 ></i>
               );
             } else {
               return (
                 <i
+                  title="Stop Recording"
                   className="fi fi-sr-microphone option"
                   onClick={SpeechRecognition.stopListening}
                 ></i>
@@ -64,6 +65,7 @@ const Options = ({ setText, listening, text }) => {
                       onClick={() => {
                         setShowDialog(false);
                         setText("");
+                        resetTranscript();
                         onClose();
                       }}
                     >
